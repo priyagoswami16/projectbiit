@@ -1,308 +1,5 @@
 #include <stdio.h>
 
-int main() {
-  int myAge = 43;
-  
-  printf("%d\n", myAge);
-  printf("%p\n", &myAge);
-  return 0;
-}
-
-
-
-#include <stdio.h>
-
-int main() {
-  int myAge = 43;  // An int variable
-  int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
-
-  // Output the value of myAge (43)
-  printf("%d\n", myAge);
-
-  // Output the memory address of myAge (0x7ffe5367e044)
-  printf("%p\n", &myAge);
-
-  // Output the memory address of myAge with the pointer (0x7ffe5367e044)
-  printf("%p\n", ptr);
-
-  return 0;
-}
-
-
-
-#include <stdio.h>
-#include <string.h>
- 
-int main() {
-  char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  printf("%zu", strlen(alphabet));
-  return 0;
-}
-
-
-#include <stdio.h>
-#include <string.h>
- 
-int main() {
-  char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  printf("Length is: %zu\n", strlen(alphabet));
-  printf("Size is: %zu\n", sizeof(alphabet));
-  return 0;
-}
-
-
-#include <stdio.h>
-#include <string.h>
- 
-int main() {
-  char alphabet[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  printf("Length is: %zu\n", strlen(alphabet));
-  printf("Size is: %zu\n", sizeof(alphabet));
-  return 0;
-}
-
-
-#include <stdio.h>
-#include <string.h>
- 
-int main() {
-  char str1[20] = "Hello ";
-  char str2[] = "World!";
- 
-  // Concatenate str2 to str1 (the result is stored in str1)
-  strcat(str1, str2);
-  
-  // Print str1
-  printf("%s", str1);
- 
-  return 0;
-}
-
-
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-  char str1[20] = "Hello World!";
-  char str2[20];
-
-  // Copy str1 to str2
-  strcpy(str2, str1);
-
-  // Print str2
-  printf("%s", str2);
-  
-  return 0;
-}
-
-
-#include <stdio.h>
-
-int main() {
-  const int minutesPerHour;
-  minutesPerHour = 60;
-  
-  printf("%d", minutesPerHour);
-  return 0;
-}
-
-
-
-#include <stdio.h>
-
-enum Level {
-  LOW,
-  MEDIUM,
-  HIGH
-};
-  
-int main() {
-  // Create an enum variable and assign a value to it
-  enum Level myVar = MEDIUM;
- 
-  // Print the enum variable
-  printf("%d", myVar);
-  
-  return 0;
-}
-
-
-#include <stdio.h>
-
-enum Level {
-  LOW = 25,
-  MEDIUM = 50,
-  HIGH = 75
-};
-  
-int main() {
-  enum Level myVar = MEDIUM;
-  printf("%d", myVar);
-  
-  return 0;
-}
-
-
-#include <stdio.h>
-
-enum Level {
-  LOW = 5,
-  MEDIUM,
-  HIGH
-};
-  
-int main() {
-  enum Level myVar = MEDIUM;
-  printf("%d", myVar);
-  
-  return 0;
-}
-
-
-#include <stdio.h>
-
-enum Level {
-  LOW = 1,
-  MEDIUM,
-  HIGH
-};
-
-int main() {
-  enum Level myVar = MEDIUM;
-  
-  switch (myVar) {
-    case 1:
-      printf("Low Level");
-      break;
-    case 2:
-      printf("Medium level");
-      break;
-    case 3:
-      printf("High level");
-      break;
-  }
-   
-  return 0;
-}
-
-
-
-// check leap year
-#include <stdio.h>
-int main() {
-   int year;
-   printf("Enter a year: ");
-   scanf("%d", &year);
-
-   // leap year if perfectly divisible by 400
-   if (year % 400 == 0) {
-      printf("%d is a leap year.", year);
-   }
-   // not a leap year if divisible by 100
-   // but not divisible by 400
-   else if (year % 100 == 0) {
-      printf("%d is not a leap year.", year);
-   }
-   // leap year if not divisible by 100
-   // but divisible by 4
-   else if (year % 4 == 0) {
-      printf("%d is a leap year.", year);
-   }
-   // all other years are not leap years
-   else {
-      printf("%d is not a leap year.", year);
-   }
-
-   return 0;
-}
-
-
-
-// Program to Check Alphabet
-#include <stdio.h>
-int main() {
-    char c;
-    printf("Enter a character: ");
-    scanf("%c", &c);
-
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        printf("%c is an alphabet.", c);
-    else
-        printf("%c is not an alphabet.", c);
-
-    return 0;
-}
-
-
-// Multiplication Table Up to 10
-#include <stdio.h>
-int main() {
-  int n;
-  printf("Enter an integer: ");
-  scanf("%d", &n);
-
-  for (int i = 1; i <= 10; ++i) {
-    printf("%d * %d = %d \n", n, i, n * i);
-  }
-  return 0;
-}
-
-
-
-
-// Program to Add Two Matrices
-#include <stdio.h>
-int main() {
-  int r, c, a[100][100], b[100][100], sum[100][100], i, j;
-  printf("Enter the number of rows (between 1 and 100): ");
-  scanf("%d", &r);
-  printf("Enter the number of columns (between 1 and 100): ");
-  scanf("%d", &c);
-
-  printf("\nEnter elements of 1st matrix:\n");
-  for (i = 0; i < r; ++i)
-    for (j = 0; j < c; ++j) {
-      printf("Enter element a%d%d: ", i + 1, j + 1);
-      scanf("%d", &a[i][j]);
-    }
-
-  printf("Enter elements of 2nd matrix:\n");
-  for (i = 0; i < r; ++i)
-    for (j = 0; j < c; ++j) {
-      printf("Enter element b%d%d: ", i + 1, j + 1);
-      scanf("%d", &b[i][j]);
-    }
-
-  // adding two matrices
-  for (i = 0; i < r; ++i)
-    for (j = 0; j < c; ++j) {
-      sum[i][j] = a[i][j] + b[i][j];
-    }
-
-  // printing the result
-  printf("\nSum of two matrices: \n");
-  for (i = 0; i < r; ++i)
-    for (j = 0; j < c; ++j) {
-      printf("%d   ", sum[i][j]);
-      if (j == c - 1) {
-        printf("\n\n");
-      }
-    }
-
-  return 0;
-}
-
-
-// Structures
-// Structures (also called structs) are a way to group several related variables into one place.
-
-// Each variable in the structure is known as a member of the structure.
-
-// Unlike an array, a structure can contain many different data types (int, float, char, etc.).
-
-
-#include <stdio.h>
-
 // Create a structure called myStructure
 struct myStructure {
   int myNum;
@@ -323,7 +20,6 @@ int main() {
 
   return 0;
 }
-
 
 
 #include <stdio.h>
@@ -373,53 +69,6 @@ int main() {
 
   // Print the value
   printf("My string: %s", s1.myString);
-
-  return 0;
-}
-
-
-
-#include <stdio.h>
-
-// Create a structure
-struct myStructure {
-  int myNum;
-  char myLetter;
-  char myString[30];
-};
-
-int main() {
-  // Create a structure variable and assign values to it
-  struct myStructure s1 = {13, 'B', "Some text"};
-
-  // Print values
-  printf("%d %c %s", s1.myNum, s1.myLetter, s1.myString);
-
-  return 0;
-}
-
-
-
-#include <stdio.h>
-
-struct myStructure {
-  int myNum;
-  char myLetter;
-  char myString[30];
-};
-
-int main() {
-  // Create a structure variable and assign values to it
-  struct myStructure s1 = {13, 'B', "Some text"};
-  
-  // Create another structure variable
-  struct myStructure s2;
-  
-  // Copy s1 values to s2
-  s2 = s1;
-
-  // Print values
-  printf("%d %c %s", s2.myNum, s2.myLetter, s2.myString);
 
   return 0;
 }
@@ -484,20 +133,167 @@ int main() {
 
 #include <stdio.h>
 
-struct Car {
-  char brand[50];
-  char model[50];
-  int year;
-};
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  printf("%d", myNumbers[0]);
+ 
+  return 0;
+}
+
+#include <stdio.h>
 
 int main() {
-  struct Car car1  = {"BMW", "X5", 1999};
-  struct Car car2  = {"Ford", "Mustang", 1969};
-  struct Car car3  = {"Toyota", "Corolla", 2011};
+  int myNumbers[] = {25, 50, 75, 100};
+  myNumbers[0] = 33;
 
-  printf("%s %s %d\n", car1.brand, car1.model, car1.year);
-  printf("%s %s %d\n", car2.brand, car2.model, car2.year);
-  printf("%s %s %d\n", car3.brand, car3.model, car3.year);
+  printf("%d", myNumbers[0]);
+ 
+  return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  int i;
+  
+  for (i = 0; i < 4; i++) {
+    printf("%d\n", myNumbers[i]);
+  }
+ 
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  // Declare an array of four integers:
+  int myNumbers[4];
+
+  // Add elements to it
+  myNumbers[0] = 25;
+  myNumbers[1] = 50;
+  myNumbers[2] = 75;
+  myNumbers[3] = 100;
+
+  printf("%d\n", myNumbers[0]);
+ 
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  int myNumbers[] = {10, 25, 50, 75, 100};
+  printf("%zu", sizeof(myNumbers));
+ 
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  int myNumbers[] = {10, 25, 50, 75, 100};
+  int length = sizeof(myNumbers) / sizeof(myNumbers[0]);
+  
+  printf("%d", length);
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  int i;
+  
+  for (i = 0; i < 4; i++) {
+    printf("%d\n", myNumbers[i]);
+  }
+ 
+  return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  int length = sizeof(myNumbers) / sizeof(myNumbers[0]);
+  int i;
+
+  for (i = 0; i < length; i++) {
+    printf("%d\n", myNumbers[i]);
+  }
+  
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+  printf("%d", matrix[0][2]);
+ 
+  return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+  int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+  matrix[0][0] = 9;
+  printf("%d", matrix[0][0]);  // Now outputs 9 instead of 1
+ 
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+
+  int i, j;
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 3; j++) {
+      printf("%d\n", matrix[i][j]);
+    }
+  }
+  
+  return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+  // A 3D array with 2 blocks, each with 4 rows and 3 columns
+  int example[2][4][3] = {
+    {
+      {1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}
+    },
+    {
+      {13, 14, 15}, {16, 17, 18}, {19, 20, 21}, {22, 23, 24}
+    }
+  };
+
+  // Print all elements using 3 nested loops
+  for (int i = 0; i < 2; i++) {
+    printf("Block %d:\n", i + 1);
+    for (int j = 0; j < 4; j++) {
+      for (int k = 0; k < 3; k++) {
+        printf("%d ", example[i][j][k]);
+      }
+      printf("\n");
+    }
+    printf("\n");
+  }
 
   return 0;
 }

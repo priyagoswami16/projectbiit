@@ -1,0 +1,190 @@
+8. Write a python program to calulate the sum of squares of two numbers by users
+n1=int(input("Enter the First Number"))
+
+n2=int(input("Enter the Second Number"))
+
+
+print(" Square of first number is:")
+
+s1= n1*n1
+
+print(s1)
+
+print(" Square of Second number is:")
+
+s2= n2*n2
+
+print(s2)
+
+print("Sum of Squares of both numbers is:")
+
+Sum= s1+s2  
+
+print(Sum)
+
+2. Write a program in Python to input distance in kilometer, time in minutes and find the speed.
+
+d=int(input('Enter distance in km '))
+t=int(input('Enter time in hour '))
+s=d/t
+print('Speed = {:.2f} km per hour'.format(s))
+
+
+3. write a program to print the largest of three numbers enter by users in python
+# Get input from the user for three numbers
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+num3 = int(input("Enter the third number: "))
+
+# Use the max() function to find the largest number
+largest_number = max(num1, num2, num3)
+
+# Print the result
+print("The largest number is:", largest_number)
+
+
+
+4 Write a program to print fibonacci series upto n terms in python
+num = 10
+n1, n2 = 0, 1
+print("Fibonacci Series:", n1, n2, end=" ")
+for i in range(2, num):
+    n3 = n1 + n2
+    n1 = n2
+    n2 = n3
+    print(n3, end=" ")
+
+print()
+
+5. Write a python program to for library charges a fine for books returned late. Following are the fines:
+First five days: 40 paisa per day.
+Six to ten day: 65 paisa per day.
+Above ten days: 80 paisa per day
+
+days = int(input("Enter the Number of Days :"))
+if (days>0 and days<= 5):
+	amt = 0.50 * days
+	print("Fine Amount Pay to Rs :", amt)
+ 
+elif(days >= 6 and days <= 10):
+	amt = 1 * days
+	print("Fine Amount Pay to Rs :", amt)
+ 
+elif (days > 10):
+	amt = 5 * days
+	print("Fine Amount Pay to Rs :", amt)
+	if (days > 30):
+		print("Your Membership would be Cancelled..")
+else:
+	print("Invalid")
+
+
+n=int(input("Enter number of days: "))
+
+f=1
+
+if n<0:
+
+print("Invalid Input.")
+
+else:
+
+if n<=5:
+
+f=0.4*n
+
+elif n<=10:
+
+f=0.65*n
+
+else:
+
+f=0.8*n
+
+print("Fine: ",f)
+
+
+4.  Write a python program to display all the prime numbers in the given range 20 to 50
+
+a=int(input("Enter starting range: "))
+
+b=int(input("Enter ending range: "))
+
+print(f"Prime numbers in the range {a} to {b} are as follows:")
+
+for i in range(a,b+1):
+
+   c=0
+
+   for j in range(1,i+1):
+
+       if i%j==0:
+
+           c+=1
+
+   if c==2:
+
+       print(i,end=" ")
+
+
+6 .write a program to convert celsius to fahrenhite if the user enters choice as 1 and fahrrenite to celsius if the user enters choice as 2 
+
+print('1. Celsius to Fahrenheit.')
+
+print('2. Fahrenheit to Celsius.')
+
+choice = int(input('Enter your choice: '))
+
+if choice == 1:
+
+   c = float(input('Enter temperature in celsius: '))
+
+   f = 9 * c / 5 + 32
+
+   print('Temperature in fahrenheit scale:', f)
+
+elif choice == 2:
+
+   f = float(input('Enter temperature in fahrenheit: '))
+
+   c = 5 * (f - 32) / 9
+
+   print('Temperature in celsius scale:', c)
+
+else:
+
+   print('Invalid choice.')
+
+
+
+7. Python program to find the sum of the series 1 - 2/2! + 3/3! - ... - n/n! for n terms:
+
+```python
+
+import math
+
+def series_sum(n):
+
+sum = 0
+
+sign = 1
+
+for i in range(1, n+1):
+
+term = i / math.factorial(i)
+
+sum += sign * term
+
+sign *= -1
+
+return sum
+
+# Example usage
+
+n = int(input("Enter the number of terms: "))
+
+result = series_sum(n)
+
+print("Sum of the series:", result)
+
+```

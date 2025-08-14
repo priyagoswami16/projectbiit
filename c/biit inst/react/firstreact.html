@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+
+    <!-- only cdn -->
+    
+    <!-- <div id="one">
+        hello react
+    </div>
+    <script type="text/babel">
+        class Hello extends React.Component{
+            render(){
+                return(
+                    <div> hello react with code </div>
+                )
+            }
+        }
+        ReactDOM.render(<Hello />, document.querySelector("#one"));
+    </script> -->
+
+
+    <!-- update for component -->
+
+     <div id="one">
+        <!-- hello react -->
+    </div>
+    <script type="text/babel">
+
+        function Show(){
+            const box = ()=> alert("hii")
+            return(
+                <button onClick={box}> click me   </button>
+            )
+        }
+        class Hello extends React.Component{
+            render(){
+                return(
+                    <div> hello react with code  <Show /> </div>
+                )
+            }
+        }
+        ReactDOM.render(<Hello />, document.querySelector("#one"));
+    </script>
+
+
+</body>
+</html>

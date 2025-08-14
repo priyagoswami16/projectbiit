@@ -1,0 +1,88 @@
+
+// create database
+use blog
+
+// create collection
+db.createCollection("posts")
+
+// insert one
+db.posts.insertOne({
+  title: "Post Title 1",
+  body: "Body of post.",
+  category: "News",
+  likes: 1,
+  tags: ["news", "events"],
+  date: Date()
+})
+
+
+// insertMany data
+db.posts.insertMany([  
+  {
+    title: "Post Title 2",
+    body: "Body of post.",
+    category: "Event",
+    likes: 2,
+    tags: ["news", "events"],
+    date: Date()
+  },
+  {
+    title: "Post Title 3",
+    body: "Body of post.",
+    category: "Technology",
+    likes: 3,
+    tags: ["news", "events"],
+    date: Date()
+  },
+  {
+    title: "Post Title 4",
+    body: "Body of post.",
+    category: "Event",
+    likes: 4,
+    tags: ["news", "events"],
+    date: Date()
+  }
+])
+
+// find
+db.posts.findOne()
+
+// filter query
+db.posts.find( {category: "News"} )
+
+// find
+db.posts.find({}, {_id: 0, title: 1, date: 1})
+
+// update data
+db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } ) 
+
+// // update data
+db.posts.find( { title: "Post Title 1" } ) 
+
+// update
+db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } ) 
+
+// update many
+db.posts.updateMany({}, { $inc: { likes: 1 } })
+
+db.posts.updateOne( 
+  { title: "Post Title 5" }, 
+  {
+    $set: 
+      {
+        title: "Post Title 5",
+        body: "Body of post.",
+        category: "Event",
+        likes: 5,
+        tags: ["news", "events"],
+        date: Date()
+      }
+  }, 
+  { upsert: true }
+)
+
+// delete
+db.posts.deleteOne({ title: "Post Title 5" })
+
+// delete
+db.posts.deleteMany({ category: "Technology" })
